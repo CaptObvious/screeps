@@ -5,14 +5,8 @@ export class ErrorMapper {
   private static _consumer?: SourceMapConsumer;
 
   public static get consumer(): SourceMapConsumer {
-    if (this._consumer == undefined) {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const consumerPromise = new SourceMapConsumer(require('main.js.map'));
-      consumerPromise.then(consumer => (this._consumer = consumer));
-    }
-
-    if (this._consumer == undefined) {
-      throw new Error('Could not load sourcemap');
+    if (this._consumer == null) {
+      this._consumer = new SourceMapConsumer(require("main.js.map"));
     }
 
     return this._consumer;

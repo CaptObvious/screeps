@@ -58,7 +58,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "source-map": "^0.7.4"
+    "source-map": "=0.6.1"
   },
   "eslintConfig": {
     "env": {
