@@ -1,0 +1,168 @@
+{
+  "name": "screeps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "//": "If you add or change the names of destinations in screeps.json, make sure you update these scripts to reflect the changes",
+  "scripts": {
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
+    "build": "rollup -c",
+    "test": "npm run test-unit",
+    "test-unit": "mocha test/unit/**/*.ts",
+    "test-integration": "echo 'See docs/in-depth/testing.md for instructions on enabling integration tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptObvious/screeps.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaptObvious/screeps/issues"
+  },
+  "homepage": "https://github.com/CaptObvious/screeps#readme",
+  "engines": {
+    "node": "20.x"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/chai": "^4.3.12",
+    "@types/lodash": "4.17.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.26",
+    "@types/screeps": "^3.3.8",
+    "@types/sinon": "^17.0.3",
+    "@types/sinon-chai": "^3.2.12",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@typescript-eslint/typescript-estree": "^7.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "lodash": "^4.17.21",
+    "mocha": "^10.3.0",
+    "prettier": "^3.2.5",
+    "rollup": "^4.13.0",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "sinon": "^17.0.1",
+    "sinon-chai": "^3.7.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "source-map": "^0.7.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-plugin/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "_": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "tsconfig.json",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": "off"
+        }
+      }
+    ],
+    "rules": {
+      "@typescript-eslint/consistent-type-definitions": [
+        "error",
+        "interface"
+      ],
+      "@typescript-eslint/no-unnecessary-type-assertion": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "@typescript-eslint/prefer-function-type": "error",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/explicit-function-return-type": [
+        "warn",
+        {
+          "allowExpressions": true
+        }
+      ],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "memberLike",
+          "modifiers": [
+            "private"
+          ],
+          "format": [
+            "camelCase"
+          ],
+          "leadingUnderscore": "require"
+        },
+        {
+          "selector": "memberLike",
+          "modifiers": [
+            "protected"
+          ],
+          "format": [
+            "camelCase"
+          ],
+          "leadingUnderscore": "require"
+        },
+        {
+          "selector": "memberLike",
+          "modifiers": [
+            "public"
+          ],
+          "format": [
+            "camelCase"
+          ],
+          "leadingUnderscore": "forbid"
+        }
+      ],
+      "@typescript-eslint/no-non-null-assertion": "warn",
+      "@typescript-eslint/space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ]
+    }
+  }
+}
